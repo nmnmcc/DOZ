@@ -1,4 +1,4 @@
-job "effect-stack" {
+job "doz" {
   type        = "service"
   datacenters = ["dc1"]
 

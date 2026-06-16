@@ -31,7 +31,7 @@ export function Header() {
     <header className="bg-background/90 sticky top-0 z-40 border-b backdrop-blur">
       <div className="mx-auto flex w-full max-w-4xl items-center gap-3 px-4 py-2.5">
         <Link className="shrink-0 text-lg font-semibold" href="/">
-          effect-stack
+          DOZ
         </Link>
 
         <div className="flex-1" />

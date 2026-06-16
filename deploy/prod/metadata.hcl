@@ -1,10 +1,9 @@
 app {
-  url  = "https://github.com/nmnmcc/effect-stack"
-  slug = "effect-stack-prod"
+  url = "https://github.com/nmnmcc/doz"
 }
 
 pack {
-  name        = "effect-stack-prod"
-  description = "effect-stack production deployment"
+  name        = "doz-prod"
+  description = "DOZ production deployment"
   version     = "0.1.0"
 }

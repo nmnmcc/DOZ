@@ -11,7 +11,7 @@ tasks:
 
   build:docker:
     desc: Build docker image
-    cmd: docker build -f ../../Dockerfile.frontend -t effect-stack/frontend ../..
+    cmd: docker build -f ../../Dockerfile.frontend -t doz/frontend ../..
 
   start:
     desc: Start Next.js production server

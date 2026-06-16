@@ -17,34 +17,34 @@ tasks:
     cmds:
       - task: dev:setup
       - nomad-pack run deploy/dev --var project_root={{.ROOT_DIR}}
-      - defer: nomad job stop dev || true
+      - defer: nomad job stop doz-dev || true
       - cmd: |-
-          alloc=$(nomad job allocs -json dev | jq -r '.[] | select(.TaskGroup == "app") | .ID' | head -1)
+          alloc=$(nomad job allocs -json doz-dev | jq -r '.[] | select(.TaskGroup == "app") | .ID' | head -1)
           exec nomad alloc logs -f "$alloc" backend
 
   dev:stop:
     desc: Stop all services
-    cmd: nomad job stop dev || true
+    cmd: nomad job stop doz-dev || true
 
   dev:status:
     desc: Show status of all services
-    cmd: nomad job status dev
+    cmd: nomad job status doz-dev
 
   dev:logs:
     desc: "Follow logs (usage: task dev:logs -- backend)"
     cmd: |-
-      alloc=$(nomad job allocs -json dev | jq -r --arg t "{{.CLI_ARGS}}" '.[] | select(.TaskStates[$t] != null) | .ID' | head -1)
+      alloc=$(nomad job allocs -json doz-dev | jq -r --arg t "{{.CLI_ARGS}}" '.[] | select(.TaskStates[$t] != null) | .ID' | head -1)
       exec nomad alloc logs -f "$alloc" "{{.CLI_ARGS}}"
 
   dev:destroy:
     desc: Destroy all services and data
     cmds:
-      - nomad job stop -purge dev 2>/dev/null || true
+      - nomad job stop -purge doz-dev 2>/dev/null || true
       - >-
         docker volume rm
-        effect-stack-postgres effect-stack-rustfs
+        doz-postgres doz-rustfs
         2>/dev/null || true
-      - docker network rm effect-stack 2>/dev/null || true
+      - docker network rm doz 2>/dev/null || true
 
   dev:reset:
     desc: Destroy all data and restart
@@ -56,7 +56,7 @@ tasks:
     internal: true
     cmds:
       - task: dev:agent
-      - docker network create effect-stack 2>/dev/null || true
+      - docker network create doz 2>/dev/null || true
 
   dev:agent:
     internal: true

@@ -1,4 +1,4 @@
-job "dev" {
+job "doz-dev" {
   type        = "service"
   datacenters = ["dc1"]
 

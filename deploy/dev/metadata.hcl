@@ -1,10 +1,9 @@
 app {
-  url  = "https://github.com/nmnmcc/effect-stack"
-  slug = "effect-stack-dev"
+  url = "https://github.com/nmnmcc/doz"
 }
 
 pack {
-  name        = "effect-stack-dev"
-  description = "effect-stack development environment"
+  name        = "dev"
+  description = "DOZ development environment"
   version     = "0.1.0"
 }

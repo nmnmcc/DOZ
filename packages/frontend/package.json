@@ -1,9 +1,9 @@
 {
-  "name": "@effect-stack/frontend",
+  "name": "@doz/frontend",
   "type": "module",
   "dependencies": {
     "@ark-ui/react": "^5.37.2",
-    "@effect-stack/backend": "workspace:*",
+    "@doz/backend": "workspace:*",
     "@effect/atom-react": "4.0.0-beta.83",
     "better-auth": "^1.6.15",
     "clsx": "^2.1.1",

@@ -9,7 +9,7 @@ export class Api extends HttpApi.make("api")
   .prefix("/api")
   .annotateMerge(
     OpenApi.annotations({
-      title: "effect-stack API",
+      title: "DOZ API",
       version: "0.1.0",
     }),
   ) {}

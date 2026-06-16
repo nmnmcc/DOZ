@@ -24,25 +24,25 @@ export interface User {
 }
 
 export class CurrentSession extends Context.Service<CurrentSession, Session>()(
-  "@effect-stack/api/CurrentSession",
+  "@doz/api/CurrentSession",
 ) {}
 
-export class CurrentUser extends Context.Service<CurrentUser, User>()("@effect-stack/api/CurrentUser") {}
+export class CurrentUser extends Context.Service<CurrentUser, User>()("@doz/api/CurrentUser") {}
 
 export class Unauthorized extends Schema.TaggedErrorClass<Unauthorized>()("Unauthorized", {}, { httpApiStatus: 401 }) {}
 
 export class AuthMiddleware extends HttpApiMiddleware.Service<
   AuthMiddleware,
   { provides: CurrentSession | CurrentUser }
->()("@effect-stack/api/AuthMiddleware", {
+>()("@doz/api/AuthMiddleware", {
   error: Unauthorized,
 }) {}
 
 export class CurrentUserOption extends Context.Service<CurrentUserOption, Option.Option<User>>()(
-  "@effect-stack/api/CurrentUserOption",
+  "@doz/api/CurrentUserOption",
 ) {}
 
 export class OptionalAuthMiddleware extends HttpApiMiddleware.Service<
   OptionalAuthMiddleware,
   { provides: CurrentUserOption }
->()("@effect-stack/api/OptionalAuthMiddleware") {}
+>()("@doz/api/OptionalAuthMiddleware") {}

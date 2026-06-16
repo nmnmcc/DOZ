@@ -1,6 +1,7 @@
+[[ define "_redis" ]]
   group "redis" {
     network {
-      mode = "bridge"
+      mode = "host"
       port "redis" { static = 6379 }
     }
 
@@ -8,7 +9,8 @@
       driver = "docker"
       config {
         image        = "redis:7"
-        network_mode = "effect-stack"
+        hostname     = "redis"
+        network_mode = "doz"
         ports        = ["redis"]
       }
 
@@ -18,3 +20,4 @@
       }
     }
   }
+[[ end ]]

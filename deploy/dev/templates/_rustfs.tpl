@@ -1,6 +1,7 @@
+[[ define "_rustfs" ]]
   group "rustfs" {
     network {
-      mode = "bridge"
+      mode = "host"
       port "api"     { static = 9000 }
       port "console" { static = 9001 }
     }
@@ -9,10 +10,16 @@
       driver = "docker"
       config {
         image        = "rustfs/rustfs"
-        network_mode = "effect-stack"
+        hostname     = "rustfs"
+        network_mode = "doz"
         ports        = ["api", "console"]
-        volumes      = ["effect-stack-rustfs:/data"]
         args         = ["server", "/data", "--console-address", ":9001"]
+        mount {
+          type     = "volume"
+          target   = "/data"
+          source   = "doz-rustfs"
+          readonly = false
+        }
       }
 
       env {
@@ -34,12 +41,12 @@
       }
       config {
         image        = "minio/mc"
-        network_mode = "effect-stack"
+        network_mode = "doz"
         entrypoint   = ["/bin/sh", "-c"]
         args = [
           <<-EOF
           until mc alias set local http://rustfs:9000 [[ var "s3_access_key" . ]] [[ var "s3_secret_key" . ]]; do sleep 1; done
-          mc mb --ignore-existing local/effect-stack
+          mc mb --ignore-existing local/doz
           EOF
         ]
       }
@@ -50,3 +57,4 @@
       }
     }
   }
+[[ end ]]

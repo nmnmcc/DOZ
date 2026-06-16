@@ -35,4 +35,4 @@ tasks:
 
   build:docker:
     desc: Build docker image
-    cmd: docker build -f ../../Dockerfile.backend -t effect-stack/backend ../..
+    cmd: docker build -f ../../Dockerfile.backend -t doz/backend ../..

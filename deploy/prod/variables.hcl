@@ -25,7 +25,7 @@ variable "frontend_url" {
 
 variable "postgres_user" {
   type    = string
-  default = "effect_stack"
+  default = "doz"
 }
 
 variable "postgres_password" {
@@ -34,7 +34,7 @@ variable "postgres_password" {
 
 variable "postgres_db" {
   type    = string
-  default = "effect_stack"
+  default = "doz"
 }
 
 variable "s3_endpoint" {
@@ -51,7 +51,7 @@ variable "s3_secret_access_key" {
 
 variable "s3_bucket" {
   type    = string
-  default = "effect-stack"
+  default = "doz"
 }
 
 variable "s3_region" {

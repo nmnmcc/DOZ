@@ -1,6 +1,7 @@
+[[ define "_postgres" ]]
   group "postgres" {
     network {
-      mode = "bridge"
+      mode = "host"
       port "db" { static = 5432 }
     }
 
@@ -8,10 +9,16 @@
       driver = "docker"
       config {
         image        = "postgres:17"
-        network_mode = "effect-stack"
+        hostname     = "postgres"
+        network_mode = "doz"
         ports        = ["db"]
-        volumes      = ["effect-stack-postgres:/var/lib/postgresql/data"]
         args         = ["-c", "wal_level=logical"]
+        mount {
+          type     = "volume"
+          target   = "/var/lib/postgresql/data"
+          source   = "doz-postgres"
+          readonly = false
+        }
       }
 
       env {
@@ -26,3 +33,4 @@
       }
     }
   }
+[[ end ]]

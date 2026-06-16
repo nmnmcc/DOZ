@@ -1,6 +1,6 @@
 import { Config as C, Context, Layer, Redacted } from "effect";
 
-export class Config extends Context.Service<Config>()("@effect-stack/backend/services/config/Config", {
+export class Config extends Context.Service<Config>()("@doz/backend/services/config/Config", {
   make: C.all({
     server: C.all({
       port: C.port("PORT").pipe(C.withDefault(30000)),
@@ -19,7 +19,7 @@ export class Config extends Context.Service<Config>()("@effect-stack/backend/ser
         endpoint: C.string("S3_ENDPOINT"),
         accessKeyId: C.redacted("S3_ACCESS_KEY_ID"),
         secretAccessKey: C.redacted("S3_SECRET_ACCESS_KEY"),
-        bucket: C.string("S3_BUCKET").pipe(C.withDefault("effect-stack")),
+        bucket: C.string("S3_BUCKET").pipe(C.withDefault("doz")),
         region: C.string("S3_REGION").pipe(C.withDefault("us-east-1")),
       }),
     ),

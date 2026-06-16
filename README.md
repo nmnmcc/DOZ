@@ -1,4 +1,4 @@
-# effect-stack
+# DOZ
 
 An opinionated full-stack TypeScript template built on Effect, Next.js, Drizzle ORM, and better-auth. Extracted from OpenWorks to provide a reusable foundation for building robust, type-safe web applications with algebraic effect management.
 
@@ -18,7 +18,7 @@ An opinionated full-stack TypeScript template built on Effect, Next.js, Drizzle 
 ## Project Structure
 
 ```
-effect-stack/
+doz/
 ├── packages/
 │   ├── backend/          # Effect-based API server
 │   │   ├── src/
@@ -69,8 +69,8 @@ effect-stack/
 1. **Clone the repository:**
 
    ```sh
-   git clone <repo-url> effect-stack
-   cd effect-stack
+   git clone <repo-url> doz
+   cd doz
    ```
 
 2. **Enter the development environment** (if using devenv):

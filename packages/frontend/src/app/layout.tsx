@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata = {
-  title: "effect-stack",
+  title: "DOZ",
   description: "Full-stack TypeScript with Effect",
 };
 

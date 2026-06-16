@@ -756,25 +756,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@drizzle-team/brocli@npm:^0.11.0":
-  version: 0.11.0
-  resolution: "@drizzle-team/brocli@npm:0.11.0"
-  checksum: 10c0/de300fbd0ee995e340a6c5990c2c48c31d3a611a32afab89bb632edbdba0509e981f60652842ec6508084358ca398641693c07dcf8a27b88bd8db0b5c8e74009
-  languageName: node
-  linkType: hard
-
-"@ecies/ciphers@npm:^0.2.5":
-  version: 0.2.6
-  resolution: "@ecies/ciphers@npm:0.2.6"
-  peerDependencies:
-    "@noble/ciphers": ^1.0.0
-  checksum: 10c0/31cbfbaedae690e12344e49eb1b7fd0697f36cf4d03100df52b925e1f19d02a6f445834938ecdd1cd74154496a74fa9147cdda6209255512220e45eb9c693ca0
-  languageName: node
-  linkType: hard
-
-"@effect-stack/backend@workspace:*, @effect-stack/backend@workspace:packages/backend":
+"@doz/backend@workspace:*, @doz/backend@workspace:packages/backend":
   version: 0.0.0-use.local
-  resolution: "@effect-stack/backend@workspace:packages/backend"
+  resolution: "@doz/backend@workspace:packages/backend"
   dependencies:
     "@better-auth/cli": "npm:1.4.21"
     "@effect/platform-node": "npm:^4.0.0-beta.83"
@@ -793,12 +777,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@effect-stack/frontend@workspace:packages/frontend":
+"@doz/frontend@workspace:packages/frontend":
   version: 0.0.0-use.local
-  resolution: "@effect-stack/frontend@workspace:packages/frontend"
+  resolution: "@doz/frontend@workspace:packages/frontend"
   dependencies:
     "@ark-ui/react": "npm:^5.37.2"
-    "@effect-stack/backend": "workspace:*"
+    "@doz/backend": "workspace:*"
     "@effect/atom-react": "npm:4.0.0-beta.83"
     "@eslint/js": "npm:^10.0.1"
     "@next/eslint-plugin-next": "npm:^16.2.7"
@@ -824,6 +808,22 @@ __metadata:
     typescript-eslint: "npm:^8.61.0"
   languageName: unknown
   linkType: soft
+
+"@drizzle-team/brocli@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@drizzle-team/brocli@npm:0.11.0"
+  checksum: 10c0/de300fbd0ee995e340a6c5990c2c48c31d3a611a32afab89bb632edbdba0509e981f60652842ec6508084358ca398641693c07dcf8a27b88bd8db0b5c8e74009
+  languageName: node
+  linkType: hard
+
+"@ecies/ciphers@npm:^0.2.5":
+  version: 0.2.6
+  resolution: "@ecies/ciphers@npm:0.2.6"
+  peerDependencies:
+    "@noble/ciphers": ^1.0.0
+  checksum: 10c0/31cbfbaedae690e12344e49eb1b7fd0697f36cf4d03100df52b925e1f19d02a6f445834938ecdd1cd74154496a74fa9147cdda6209255512220e45eb9c693ca0
+  languageName: node
+  linkType: hard
 
 "@effect/atom-react@npm:4.0.0-beta.83":
   version: 4.0.0-beta.83

@@ -1,5 +1,5 @@
 {
-  "name": "@effect-stack/backend",
+  "name": "@doz/backend",
   "type": "module",
   "exports": {
     "./api": "./src/services/api/interfaces/index.ts"

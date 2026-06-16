@@ -4,7 +4,7 @@ import config from "./config";
 
 const nextConfig: NextConfig = {
   output: "standalone",
-  transpilePackages: ["@effect-stack/backend"],
+  transpilePackages: ["@doz/backend"],
   allowedDevOrigins: ["127.0.0.1"],
   async rewrites() {
     return [

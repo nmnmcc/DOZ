@@ -5,7 +5,7 @@ import { Config } from "../config";
 import { DatabasePool } from "../database";
 import { make } from "./make";
 
-export class Auth extends Context.Service<Auth>()("@effect-stack/services/auth/Auth", {
+export class Auth extends Context.Service<Auth>()("@doz/services/auth/Auth", {
   make: Effect.gen(function* () {
     const pool = yield* DatabasePool;
     const config = yield* Config;

@@ -12,7 +12,7 @@ export type Schema = typeof schema;
 export type Relations = typeof relations;
 
 export class Database extends Context.Service<Database, EffectPostgres.EffectPgDatabase<Relations>>()(
-  "@effect-stack/services/database/Database",
+  "@doz/services/database/Database",
 ) {}
 
 export namespace Database {
@@ -29,7 +29,7 @@ export namespace Database {
 }
 
 export class DatabasePool extends Context.Service<DatabasePool, Pool>()(
-  "@effect-stack/services/database/DatabasePool",
+  "@doz/services/database/DatabasePool",
 ) {}
 
 export namespace DatabasePool {

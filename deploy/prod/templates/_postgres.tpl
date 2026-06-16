@@ -9,7 +9,7 @@
       config {
         image        = "postgres:17"
         ports        = ["db"]
-        volumes      = ["effect-stack-postgres:/var/lib/postgresql/data"]
+        volumes      = ["doz-postgres:/var/lib/postgresql/data"]
         args         = [
           "-c", "max_connections=200",
           "-c", "shared_buffers=256MB",

@@ -13,7 +13,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 COPY tsconfig.base.json tsconfig.json ./
 COPY packages/backend packages/backend
 COPY packages/frontend packages/frontend
-RUN yarn workspace @effect-stack/frontend run next build
+RUN yarn workspace @doz/frontend run next build
 
 FROM node:24-slim
 WORKDIR /app

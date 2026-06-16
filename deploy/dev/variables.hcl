@@ -5,25 +5,25 @@ variable "project_root" {
 
 variable "postgres_user" {
   type    = string
-  default = "effect_stack"
+  default = "doz"
 }
 
 variable "postgres_password" {
   type    = string
-  default = "effect_stack"
+  default = "doz"
 }
 
 variable "postgres_db" {
   type    = string
-  default = "effect_stack"
+  default = "doz"
 }
 
 variable "s3_access_key" {
   type    = string
-  default = "effect-stack-dev"
+  default = "doz-dev"
 }
 
 variable "s3_secret_key" {
   type    = string
-  default = "effect-stack-dev-secret"
+  default = "doz-dev-secret"
 }

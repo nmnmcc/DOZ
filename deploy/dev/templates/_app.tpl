@@ -1,6 +1,7 @@
+[[ define "_app" ]]
   group "app" {
     network {
-      mode = "bridge"
+      mode = "host"
       port "backend"  { static = 30000 }
       port "frontend" { static = 3000 }
     }
@@ -36,7 +37,7 @@
         S3_ENDPOINT      = "http://127.0.0.1:9000"
         S3_ACCESS_KEY_ID = "[[ var "s3_access_key" . ]]"
         S3_SECRET_ACCESS_KEY = "[[ var "s3_secret_key" . ]]"
-        S3_BUCKET        = "effect-stack"
+        S3_BUCKET        = "doz"
         S3_REGION        = "us-east-1"
       }
 
@@ -50,7 +51,7 @@
       driver = "raw_exec"
       config {
         command = "/bin/sh"
-        args    = ["-c", "cd [[ var "project_root" . ]] && yarn workspace @effect-stack/frontend run next dev --turbopack -p 3000"]
+        args    = ["-c", "cd [[ var "project_root" . ]] && yarn workspace @doz/frontend run next dev --turbopack -p 3000"]
       }
 
       env {
@@ -64,3 +65,4 @@
       }
     }
   }
+[[ end ]]
